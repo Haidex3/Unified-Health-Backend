@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('horario_horas', function (Blueprint $table) {
             $table->id();
+
+            $table->integer('hora');
+
+            $table->boolean('disponible')->default(true);
+
+            $table->date('fecha');
+
+            $table->foreignId('medico_id')
+                ->constrained()
+                ->cascadeOnDelete();
+
             $table->timestamps();
         });
     }

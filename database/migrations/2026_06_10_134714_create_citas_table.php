@@ -14,9 +14,20 @@ return new class extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->date('fecha');
+
+            $table->string('detalles');
+
+            $table->integer('conclusiones');
+
             $table->foreignId('horario_hora_id')
                 ->unique()
                 ->constrained();
+
+            $table->foreignId('paciente_id')
+                ->constrained()
+                ->cascadeOnDelete();
         });
     }
 

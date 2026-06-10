@@ -13,6 +13,21 @@ return new class extends Migration
     {
         Schema::create('medicos', function (Blueprint $table) {
             $table->id();
+
+            $table->string('nombre');
+
+            $table->string('correo');
+
+            $table->integer('RUT');
+
+            $table->string ('contraseña');
+
+            $table->integer('celular');
+
+            $table->foreignId('hostpital_id')
+                ->constrained()
+                ->cascadeOnDelete();
+
             $table->timestamps();
         });
     }

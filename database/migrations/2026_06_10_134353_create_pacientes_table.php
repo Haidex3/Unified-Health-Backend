@@ -20,7 +20,13 @@ return new class extends Migration
 
             $table->integer('RUT');
 
-            $table->string('direccion');
+            $table->string ('sexo');
+
+            $table->integer('celular');
+
+            $table->foreignId('hostpital_id')
+                ->constrained()
+                ->cascadeOnDelete();
 
             $table->timestamps();
         });
