@@ -13,6 +13,8 @@ class Cita extends Model
         'fecha',
         'detalles',
         'conclusiones',
+        'paciente_id',
+        'horario_hora_id'
     ];
 
     public function events()

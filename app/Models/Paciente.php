@@ -14,6 +14,7 @@ class Paciente extends Model
         'RUT',
         'celular',
         'sexo',
+        'hospital_id'
     ];
 
     public function events()

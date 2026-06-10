@@ -13,7 +13,8 @@ class Medico extends Model
         'correo',
         'celular',
         'contraseña',
-        'RUT'
+        'RUT',
+        'hospital_id'
     ];
 
     public function events()

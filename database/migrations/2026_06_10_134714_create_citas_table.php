@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('horario_hora_id')
+                ->unique()
+                ->constrained();
         });
     }
 

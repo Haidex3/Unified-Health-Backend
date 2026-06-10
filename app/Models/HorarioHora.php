@@ -12,6 +12,7 @@ class HorarioHora extends Model
         'hora',
         'disponible',
         'fecha',
+        'medico_id',
     ];
 
     public function events()
