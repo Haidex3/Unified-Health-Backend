@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Administrador extends Model
 {
@@ -14,8 +15,7 @@ class Administrador extends Model
         'contraseña',
     ];
 
-    public function events()
-    {
-        return $this->hasMany(Event::class);
-    }
+    protected $hidden = [
+        'contraseña',
+    ];
 }

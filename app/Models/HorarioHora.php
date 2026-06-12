@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class HorarioHora extends Model
 {
@@ -10,13 +11,24 @@ class HorarioHora extends Model
 
     protected $fillable = [
         'hora',
-        'disponible',
         'fecha',
+        'disponible',
         'medico_id',
     ];
 
-    public function events()
+    protected $casts = [
+        'fecha' => 'date',
+        'hora' => 'datetime:H:i:s',
+        'disponible' => 'boolean',
+    ];
+
+    public function medico()
     {
-        return $this->hasMany(Event::class);
+        return $this->belongsTo(Medico::class);
+    }
+
+    public function cita()
+    {
+        return $this->hasOne(Cita::class);
     }
 }

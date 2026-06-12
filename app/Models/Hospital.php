@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Hospital extends Model
 {
@@ -15,8 +16,8 @@ class Hospital extends Model
         'direccion',
     ];
 
-    public function events()
+    public function medicos()
     {
-        return $this->hasMany(Event::class);
+        return $this->hasMany(Medico::class);
     }
 }

@@ -16,9 +16,9 @@ return new class extends Migration
 
             $table->string('nombre');
 
-            $table->string('correo');
+            $table->string('correo')->unique();
 
-            $table->integer('telefono');
+            $table->string('telefono');
 
             $table->string('direccion');
 

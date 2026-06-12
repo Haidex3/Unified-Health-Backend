@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('horario_horas', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('hora');
+            $table->time('hora');
 
             $table->boolean('disponible')->default(true);
 

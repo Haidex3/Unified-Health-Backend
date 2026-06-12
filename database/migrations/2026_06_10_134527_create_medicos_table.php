@@ -16,15 +16,15 @@ return new class extends Migration
 
             $table->string('nombre');
 
-            $table->string('correo');
-
-            $table->integer('RUT');
+            $table->string('correo')->unique(); 
+            
+            $table->string('RUT')->unique();
 
             $table->string ('contraseña');
 
             $table->integer('celular');
 
-            $table->foreignId('hostpital_id')
+            $table->foreignId('hospital_id')
                 ->constrained()
                 ->cascadeOnDelete();
 
