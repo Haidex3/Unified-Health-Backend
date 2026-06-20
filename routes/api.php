@@ -1,11 +1,10 @@
 <?php
-
-use App\Http\Controllers\Api\AdministradorController;
-use App\Http\Controllers\Api\CitaController;
-use App\Http\Controllers\Api\HorarioHoraController;
-use App\Http\Controllers\Api\HospitalController;
-use App\Http\Controllers\Api\MedicoController;
-use App\Http\Controllers\Api\PacienteController;
+use App\Http\Controllers\CitaController;
+use App\Http\Controllers\HorarioHoraController;
+use App\Http\Controllers\HospitalController;
+use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\MedicoController;
+use App\Http\Controllers\AdministradorController;
 
 Route::apiResource(
     'administradores',
