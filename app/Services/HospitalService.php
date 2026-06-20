@@ -24,7 +24,7 @@ class HospitalService
             'nombre' => $data['nombre'],
             'correo' => $data['correo'],
             'telefono' => $data['telefono'],
-            'direccion' => $data['direccion'],
+            'ubicacion' => $data['ubicacion'],
         ]);
     }
 
@@ -36,7 +36,7 @@ class HospitalService
             'nombre' => $data['nombre'] ?? $hospital->nombre,
             'correo' => $data['correo'] ?? $hospital->correo,
             'telefono' => $data['telefono'] ?? $hospital->telefono,
-            'direccion' => $data['direccion'] ?? $hospital->direccion,
+            'ubicacion' => $data['ubicacion'] ?? $hospital->ubicacion,
         ]);
 
         return $hospital->fresh();

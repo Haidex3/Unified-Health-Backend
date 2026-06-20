@@ -13,7 +13,7 @@ class Hospital extends Model
         'nombre',
         'correo',
         'telefono',
-        'direccion',
+        'ubicacion',
     ];
 
     public function medicos()

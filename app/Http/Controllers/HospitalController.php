@@ -31,7 +31,7 @@ class HospitalController extends Controller
                 'nombre',
                 'correo',
                 'telefono',
-                'direccion',
+                'ubicacion',
             ]
         ]);
     }
