@@ -24,6 +24,8 @@ return new class extends Migration
 
             $table->string('celular');
 
+            $table->string('password');
+
             $table->foreignId('hospital_id')
                 ->constrained()
                 ->cascadeOnDelete();

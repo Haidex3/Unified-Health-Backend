@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Medico extends Model
+class Medico extends Authenticatable
 {
     use HasFactory;
 
@@ -13,7 +13,7 @@ class Medico extends Model
         'nombre',
         'correo',
         'RUT',
-        'contraseña',
+        'password',
         'celular',
         'hospital_id',
     ];

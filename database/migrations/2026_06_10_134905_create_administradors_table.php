@@ -18,6 +18,8 @@ return new class extends Migration
 
             $table->string('correo')->unique();
 
+            $table->integer('RUT')->unique();
+
             $table->string('password');
 
             $table->timestamps();

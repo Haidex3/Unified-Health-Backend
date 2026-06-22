@@ -33,6 +33,7 @@ class PacienteController extends Controller
                 'RUT',
                 'sexo',
                 'celular',
+                'password',
                 'hospital_id',
             ]
         ]);
