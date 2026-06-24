@@ -22,7 +22,7 @@ return new class extends Migration
 
             $table->string('password');
 
-            $table->integer('celular');
+            $table->string('celular');
 
             $table->foreignId('hospital_id')
                 ->constrained()
