@@ -46,6 +46,7 @@ class AuthService
             'message' => 'Login exitoso',
             'user' => $user,
             'type' => $type,
+            'token' => $user->createToken('auth_token')->plainTextToken,
         ];
     }
 }

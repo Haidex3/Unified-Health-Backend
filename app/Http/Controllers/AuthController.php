@@ -30,6 +30,7 @@ class AuthController extends Controller
             'message' => $result['message'],
             'user' => $result['user'],
             'type' => $result['type'],
+            'token' => $result['token'],
         ]);
     }
 
