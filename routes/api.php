@@ -5,6 +5,7 @@ use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\AdministradorController;
+use App\Http\Controllers\AuthController;
 
 Route::apiResource(
     'administradores',
@@ -20,6 +21,12 @@ Route::apiResource(
     'horario-horas',
     HorarioHoraController::class
 );
+
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
 
 Route::apiResource(
     'hospitales',

@@ -36,7 +36,7 @@ class MedicoService
             'nombre' => $data['nombre'],
             'correo' => $data['correo'],
             'RUT' => $data['RUT'],
-            'contraseña' => Hash::make($data['contraseña']),
+            'password' => Hash::make($data['password']),
             'celular' => $data['celular'],
             'hospital_id' => $data['hospital_id'],
         ]);
@@ -54,8 +54,8 @@ class MedicoService
             'hospital_id' => $data['hospital_id'] ?? $medico->hospital_id,
         ];
 
-        if (isset($data['contraseña'])) {
-            $payload['contraseña'] = Hash::make($data['contraseña']);
+        if (isset($data['password'])) {
+            $payload['password'] = Hash::make($data['password']);
         }
 
         $medico->update($payload);

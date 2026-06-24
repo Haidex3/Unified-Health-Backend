@@ -20,9 +20,9 @@ return new class extends Migration
             
             $table->string('RUT')->unique();
 
-            $table->string ('contraseña');
+            $table->string('password');
 
-            $table->integer('celular');
+            $table->string('celular');
 
             $table->foreignId('hospital_id')
                 ->constrained()

@@ -31,7 +31,7 @@ class MedicoController extends Controller
                 'nombre',
                 'correo',
                 'RUT',
-                'contraseña',
+                'password',
                 'celular',
                 'hospital_id',
             ]

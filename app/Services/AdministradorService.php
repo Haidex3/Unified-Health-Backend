@@ -29,7 +29,8 @@ class AdministradorService
         return Administrador::create([
             'nombre' => $data['nombre'],
             'correo' => $data['correo'],
-            'contraseña' => Hash::make($data['contraseña']),
+            'RUT' => $data['RUT'],
+            'password' => Hash::make($data['password']),
         ]);
     }
 
@@ -40,10 +41,11 @@ class AdministradorService
         $payload = [
             'nombre' => $data['nombre'] ?? $administrador->nombre,
             'correo' => $data['correo'] ?? $administrador->correo,
+            'RUT' => $data['RUT'] ?? $administrador->RUT,
         ];
 
-        if (isset($data['contraseña'])) {
-            $payload['contraseña'] = Hash::make($data['contraseña']);
+        if (isset($data['password'])) {
+            $payload['password'] = Hash::make($data['password']);
         }
 
         $administrador->update($payload);

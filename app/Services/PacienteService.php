@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Paciente;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Hash;
 
 class PacienteService
 {
@@ -37,6 +38,7 @@ class PacienteService
             'RUT' => $data['RUT'],
             'sexo' => $data['sexo'],
             'celular' => $data['celular'],
+            'password' => Hash::make($data['password']),
             'hospital_id' => $data['hospital_id'],
         ]);
     }
@@ -45,14 +47,20 @@ class PacienteService
     {
         $paciente = Paciente::findOrFail($id);
 
-        $paciente->update([
+        $payload = [
             'nombre' => $data['nombre'] ?? $paciente->nombre,
             'correo' => $data['correo'] ?? $paciente->correo,
             'RUT' => $data['RUT'] ?? $paciente->RUT,
             'sexo' => $data['sexo'] ?? $paciente->sexo,
             'celular' => $data['celular'] ?? $paciente->celular,
             'hospital_id' => $data['hospital_id'] ?? $paciente->hospital_id,
-        ]);
+        ];
+
+        if (isset($data['password'])) {
+            $payload['password'] = Hash::make($data['password']);
+        }
+
+        $paciente->update($payload);
 
         return $paciente->fresh();
     }

@@ -30,7 +30,8 @@ class AdministradorController extends Controller
             'fields' => [
                 'nombre',
                 'correo',
-                'contraseña',
+                'RUT',
+                'password',
             ]
         ]);
     }
