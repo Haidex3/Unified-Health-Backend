@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->string('detalles');
 
-            $table->integer('conclusiones');
+            $table->string('conclusiones');
 
             $table->foreignId('horario_hora_id')
                 ->unique()
